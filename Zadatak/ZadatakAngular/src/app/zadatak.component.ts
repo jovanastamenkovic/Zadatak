@@ -1,26 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ZadatakService } from './zadatak.service';
-import { refreshDescendantViews } from '@angular/core/src/render3/instructions';
 
 @Component({
-  selector: 'my-cmpdate',
+  selector: 'date-value',
   templateUrl: './zadatak.component.html',
-  styleUrls: ['./zadatak.component.scss'],
   providers: [ZadatakService]
 })
 export class ZadatakComponent implements OnInit {
-
-  public date: string;
+  @Input('date') date: string;
   constructor(private zadatakService: ZadatakService) { }
 
   ngOnInit() {
-    this.refresh();
+    this.init();
   }
 
-  refresh() {
-    this.zadatakService.getZadatak().subscribe(data => {
-        this.date = data.DateInString;
+  init() {
+    this.zadatakService.getDate().subscribe(data => {
+        this.date = data;
   });
 }
-
 }
