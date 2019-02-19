@@ -2,18 +2,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ZadatakComponent } from './zadatak.component';
+import { DataValueComponent } from './data-value.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DataValueService } from './data-value.service';
 
 @NgModule({
   declarations: [
-    AppComponent, ZadatakComponent
+    AppComponent, DataValueComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent, ZadatakComponent]
+  providers: [DataValueService],
+
+  bootstrap: [AppComponent, DataValueComponent]
 })
 export class AppModule { }

@@ -4,7 +4,7 @@ import { environment } from '../environments/environment';
 import { Observable } from 'rxjs';
 
 @Injectable()
-export class ZadatakService {
+export class DataValueService {
 
     constructor(private http: HttpClient) { }
     public getDate(): Observable<string> {
